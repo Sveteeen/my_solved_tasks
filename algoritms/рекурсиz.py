@@ -23,3 +23,12 @@ def maxim(numb):
 
 
 print(maxim(numb))
+
+#подсчет количества элементов в массиве
+def count(numb):
+    if not numb:
+        return 0
+    return 1 + count(numb[1:])
+
+
+print(count(numb))
