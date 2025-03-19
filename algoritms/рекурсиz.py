@@ -44,3 +44,21 @@ print(count(numb))
 17 — можно (3, 3, 3, 3, 5)
 '''
 
+n = int(input())
+summ = {}
+
+def can(n):
+    if n in summ:
+        return summ[n]
+    if n == 3 or n == 5:
+        return True
+    if n > 5 and can(n - 5):
+        summ[n] = True
+        return True
+    if n > 3 and can(n - 3):
+        summ[n] = True
+        return True
+    summ[n] = False
+    return False
+
+print(can(n))
