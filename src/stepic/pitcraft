@@ -1,0 +1,15 @@
+n = int(input())
+s = [int(i) for i in input().split()]
+max_pos = s.index(max(s))
+max_stolb = 0
+water = 0
+for i in range(max_pos):
+    if s[max_stolb] < s[i]:
+        max_stolb = i
+    water += s[max_stolb] - s[i]
+max_stolb = -1
+for i in range(n - 1, max_pos, -1):
+    if s[max_stolb] < s[i]:
+        max_stolb = i
+    water += s[max_stolb] - s[i]
+print(water)
