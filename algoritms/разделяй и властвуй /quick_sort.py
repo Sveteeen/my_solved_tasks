@@ -8,17 +8,14 @@ def quick_sort(numb):
     smaller = []
     bigger = []
 
-    for i in numb[:pivot]:
-        if i < numb[pivot]:
-            smaller.append(i)
-        elif i >= numb[pivot]:
-            bigger.append(i)
+    for i in range(len(numb)):
+        if i == pivot:
+            continue
+        if numb[i] < numb[pivot]:
+            smaller.append(numb[i])
+        elif numb[i] >= numb[pivot]:
+            bigger.append(numb[i])
 
-    for i in numb[pivot + 1:]:
-        if i < numb[pivot]:
-            smaller.append(i)
-        elif i > numb[pivot]:
-            bigger.append(i)
 
     return quick_sort(smaller) + [numb[pivot]] + quick_sort(bigger)
 
