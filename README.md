@@ -1,1 +1,1 @@
-# my_solved_tasks
+# my_algoritms_tasks
